@@ -10,19 +10,31 @@ const App = () => {
     const [index, setIndex] = useState(0);
 
     const { name, job, image, text } = people[index];
-    console.log(name);
+
+    const checkNumber = (number) => {
+        if (number > people.length - 1) {
+            return 0;
+        } else {
+            if (number < 0) {
+                return people.length - 1;
+            }
+        }
+        return number;
+    };
 
     const nextPerson = () => {
         setIndex((prevIndex) => {
             const newIndex = prevIndex + 1;
-            return newIndex;
+
+            return checkNumber(newIndex);
         });
     };
 
     const prevPerson = () => {
         setIndex((prevIndex) => {
             const newIndex = prevIndex + 1;
-            return newIndex;
+
+            return checkNumber(newIndex);
         });
     };
 
