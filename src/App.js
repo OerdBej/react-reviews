@@ -12,6 +12,20 @@ const App = () => {
     const { name, job, image, text } = people[index];
     console.log(name);
 
+    const nextPerson = () => {
+        setIndex((prevIndex) => {
+            const newIndex = prevIndex + 1;
+            return newIndex;
+        });
+    };
+
+    const prevPerson = () => {
+        setIndex((prevIndex) => {
+            const newIndex = prevIndex + 1;
+            return newIndex;
+        });
+    };
+
     return (
         <main>
             <article className='review'>
@@ -24,6 +38,14 @@ const App = () => {
                 <h4>{name}</h4>
                 <p>{job}</p>
                 <p>{text}</p>
+                <div>
+                    <button onClick={prevPerson}>
+                        <FaChevronCircleLeft />
+                    </button>
+                    <button onClick={nextPerson}>
+                        <FaChevronCircleRight />
+                    </button>
+                </div>
             </article>
         </main>
     );
