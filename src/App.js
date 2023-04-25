@@ -1,25 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import people from './components/data';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [index, setIndex] = useState(0);
+
+    const { name, job, image, text } = people[index];
+    console.log(name);
+
+    return <div>App</div>;
+};
 
 export default App;
