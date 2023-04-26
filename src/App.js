@@ -51,23 +51,25 @@ const App = () => {
         <main>
             <article className='review'>
                 <div className='img-container'>
-                    <img src={image} alt={name} />
-                    <span>
+                    <img src={image} alt={name} className='person-img' />
+                    <span className='quote-icon'>
                         <FaQuoteRight />
                     </span>
                 </div>
-                <h4>{name}</h4>
-                <p>{job}</p>
-                <p>{text}</p>
-                <div>
-                    <button onClick={prevPerson}>
+                <h4 className='author'>{name}</h4>
+                <p className='job'>{job}</p>
+                <p className='info'>{text}</p>
+                <div className='btn-container'>
+                    <button className='prev-btn' onClick={prevPerson}>
                         <FaChevronCircleLeft />
                     </button>
-                    <button onClick={nextPerson}>
+                    <button className='next-btn' onClick={nextPerson}>
                         <FaChevronCircleRight />
                     </button>
                 </div>
-                <button onClick={randomPerson}>Surprise</button>
+                <button className='btn btn-hipster' onClick={randomPerson}>
+                    Surprise
+                </button>
             </article>
         </main>
     );
