@@ -37,7 +37,16 @@ const App = () => {
             return checkNumber(newIndex);
         });
     };
-
+    // the random is the length of the people
+    const randomPerson = () => {
+        let randomNumber = Math.floor(Math.random() * people.length);
+        //we put the condtional in order to get always make sure that we change the screen picture
+        if (randomNumber === index) {
+            randomNumber = index + 1;
+        }
+        //the parameter of the function, is the  random number index
+        setIndex(checkNumber(randomNumber));
+    };
     return (
         <main>
             <article className='review'>
@@ -58,6 +67,7 @@ const App = () => {
                         <FaChevronCircleRight />
                     </button>
                 </div>
+                <button onClick={randomPerson}>Surprise</button>
             </article>
         </main>
     );
